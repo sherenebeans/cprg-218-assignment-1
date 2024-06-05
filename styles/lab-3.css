@@ -1,0 +1,57 @@
+/*
+Step 1: 
+
+Make the section with a class called 'container' a flex box that is 
+centered horizontally.
+
+This puts the container into a flex */
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+/*
+Step 2:
+
+Make the `<ul>` box with `<ul class="card-container">` a grid with 1 column and
+horizontally centered.
+
+This makes the container into a grid */
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+}
+
+/* 
+Step 3:
+
+Tablet - Add a media query for devices with screen widths between 768px and 1199px,
+  - the `card-container` should display a two-column grid layout with a 24px gap, and
+  - the monkey card spans 2 columns with a width of 100%
+
+This is for tablet - this should have 2 columns*/
+@media (min-width: 768px) and (max-width:1199px) {
+    .card-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+    #monkey-card{
+            grid-column: span 2;
+            width: 100%;
+        }
+ }
+
+/* 
+Step 4:
+
+Desktop - Add a media query for devices with screen widths greater than 1199px, 
+the `card-container`should display a three-column grid layout with a 12px gap.
+
+This is for dekstop - this will have 3 columns */
+@media (min-width: 1200px) {
+    .card-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px
+    }
+}
